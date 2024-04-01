@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html xmlns: th="https://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Editar Evento</h1>
+    <form action="#" th:action="@{/modifEvento}" method="POST" th:object="${evento}" >
+        <input type="hidden" th:field="*{id_event}" />
+        <label for="nombreEvent">Nombre</label>
+        <input type="text" th:field="*{nombreEvent}"required/><br/>
+
+        <label for="descrip">Descripción</label>
+        <input type="text" th:field="*{descrip}"required/><br/>
+
+        <label for="fechaInicio">Fecha inicia</label>
+        <input type="date" th:field="*{fechaInicio}"required/><br/>
+
+        <label for="fechaFin">Fecha termina</label>
+        <input type="date" th:field="*{fechaFin}"required/><br/>
+
+        <label for="imagen">Imágenes</label>
+        <input type="file" th:field="*{imagen}"accept="image/*" multiple/><br/>
+
+        <button type="submit"> guardar</button>
+    </form>
+</body>
+</html>

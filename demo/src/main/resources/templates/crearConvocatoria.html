@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Formulario de Convocatoria</title>
+    <link rel="stylesheet" th:href="@{/css/formularios.css}"/>
+</head>
+<body>
+    <div class="container">
+        <img src="../images/logo.png" width="120" height="120" >
+    <form th:object="${convocatoria}" th:action="@{/guardar}" method="post">
+        <input type="text" name="nombre" placeholder="nombre del evento" required/><br/>
+        <br>
+        <input placeholder="Fecha que inicia" type="date" name="fechaInicio" required/><br/>
+        <br>
+        <input placeholder="Fecha que termina" type="date" name="fechaFin" required/><br/>
+        <br>
+        <input placeholder="descripción del evento" type="text" name="descripcion" required/><br/>
+        <br>
+        <button class="but" type="submit">Guardar</button>
+        <button class="but" > <a class="r" th:href="@{/comiteconv}">Cancelar</a></button>
+    </form></div>
+</body>
+</html>

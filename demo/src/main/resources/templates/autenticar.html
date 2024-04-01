@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html xmlns: th="https://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Autenticar usuario</title>
+    <link rel="stylesheet"  th:href='@{/css/autenticar.css}'; >
+    <script src="../javaScript/script.js"></script>
+</head>
+<body>
+    <div th:if="${param.error}">
+        Usuario y contraseña incorrectos.
+    </div>
+    <div th:if="${param.logout}">
+        Se ha autenticado satisfactoriamente.
+    </div>
+    <form class="login-form" method="get" th:action="@{/login}">
+        <h1>Autenticar usuario</h1>
+        
+        <div class="form-input-material">
+        <input type="text" name="usuario" placeholder="Usuario " autocomplete="off" class="form-control-material" required />
+        
+        <div class="form-input-material">
+        <input type="password" name="clave" placeholder=" Contraseña" autocomplete="off" class="form-control-material" required />
+        
+        </div>
+        <br>
+        <button type="submit" class="de">Aceptar</button>
+        <button class="de"><a class="cancel" th:href="@{/}">Cancelar</a></button>
+    </form>
+</body>
+</html>
+
+
+
+
+

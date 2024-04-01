@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="es" xmlns: th="https://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" th:href="@{/css/usuarios.css}"/>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link" th:href="@{/vicerrectoria}">Volver</a>
+                </li>
+                
+            </ul>
+            </div>
+        
+    </nav>
+    <h2 class="h2">Usuarios Registrados</h2>
+    <div class="btn_group">
+        <input type="text" class="form-control" placeholder="Buscar usuario">
+        <button type="submit" class="glyphicon glyphicon-search"></button>
+        <br></div>
+        <br>
+    <table>
+        <thead>
+            <tr>
+                <th>Nombre</th>
+                <th>Apellidos</th>
+                <th>correo</th>
+                <th>Rol</th>
+                <th>Asignar Rol</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr th:each=" usuario: ${usuarios}">
+                <td th:text="${usuario.nombre}"></td>
+                <td th:text="${usuario.apellidos}"></td>
+                <td th:text="${usuario.correo}"></td>
+                <td th:text="${usuario.rol}"></td>
+                <td>
+                    <form th:action="'/editarRol/' + ${usuario.id}" method="post">
+                        <select name="nuevoRol">
+                            <option value="comité organizador">Comité Organizador</option>
+                            <option value="revisor">Revisor</option>
+                            <option value="participante">Participante</option>
+                        </select>
+                        <button type="submit">Actualizar</button>
+                    </form>
+                </td>
+
+            </tr>
+        </tbody>
+    </table>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@1.16.1/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

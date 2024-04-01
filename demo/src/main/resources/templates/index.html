@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="es" xmlns: th="https://www.thymeleaf.org">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="keywords" content="HTML5, CSS3, JavaScript" />
+    <meta name="author" content="Diacnis, Fernando, Marco, Christofher" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, user-scale=no, maximum-scale=1.0, minimum-scale=1.0"
+    />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-social/5.1.1/bootstrap-social.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.min.css"></script>
+    <link rel="stylesheet" th:href="@{/css/est.css}"/>
+    <title>"Eventos científicos"</title>
+  </head>
+
+  <body>
+    <main class="site-wrapper">
+      <div class="pt-table desktop-768">
+      <div class="pt-tablecell page-home relative"
+    style="background-image: url(https://images.unsplash.com/photo-1486870591958-9b9d0d1dda99?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1500&q=80);
+          background-position: center;
+          background-size: cover;">
+          <div class="overlay"></div>
+
+          <div class="container">
+          <div class="row">
+              <div
+              class="col-xs-12 col-md-offset-1 col-md-10 col-lg-offset-2 col-lg-8"
+              >
+              <div class="page-title home text-center">
+                <img src="../images/logo.png" width="220" height="220" >
+                  <span class="heading-page">
+                    <h1>Bienvenido a la página de Eventos científicos UCI DoScience</h1> </span>
+              </div>
+  
+              <di class="hexagon-menu clear">
+                  <div class="hexagon-item">
+                  <div class="hex-item">
+                      <div></div>
+                      <div></div>
+                      <div></div>
+                  </div>
+                  <div class="hex-item">
+                      <div></div>
+                      <div></div>
+                      <div></div>
+                  </div>
+                  <a class="hex-content">
+                      <span class="hex-content-inner">
+                      <span class="icon">
+                          <i class="fa fa-universal-access"></i>
+                      </span>
+                      <span class="title"><form action="/registrar" method="get">
+                        <button type="submit" class="but">
+                          Registrar
+                        </button>
+                      </form></span>
+                      </span>
+                      <svg
+                      viewBox="0 0 173.20508075688772 200"
+                      height="200"
+                      width="174"
+                      version="1.1"
+                      xmlns="http://www.w3.org/2000/svg"
+                      >
+                      <path
+                          d="M86.60254037844386 0L173.20508075688772 50L173.20508075688772 150L86.60254037844386 200L0 150L0 50Z"
+                          fill="#1e2530"
+                      ></path>
+                      </svg>
+                  </a>
+                  </div>
+                  <div class="hexagon-item">
+                  <div class="hex-item">
+                      <div></div>
+                      <div></div>
+                      <div></div>
+                  </div>
+                  <div class="hex-item">
+                      <div></div>
+                      <div></div>
+                      <div></div>
+                  </div>
+                  <a class="hex-content">
+                      <span class="hex-content-inner">
+                      <span class="icon">
+                          <i class="fa fa-bullseye"></i>
+                      </span>
+                      <span class="title" onclick="scrollToConvocatorias()">
+                        Convocatorias</span>
+                      </span>
+                      <svg
+                      viewBox="0 0 173.20508075688772 200"
+                      height="200"
+                      width="174"
+                      version="1.1"
+                      xmlns="http://www.w3.org/2000/svg"
+                      >
+                      <path
+                          d="M86.60254037844386 0L173.20508075688772 50L173.20508075688772 150L86.60254037844386 200L0 150L0 50Z"
+                          fill="#1e2530"
+                      ></path>
+                      </svg>
+                  </a>
+                  </div>
+                  <div class="hexagon-item">
+                    <div class="hex-item">
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                    </div>
+                    <div class="hex-item">
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                    </div>
+                    <a class="hex-content">
+                        <span class="hex-content-inner">
+                        <span class="icon">
+                            <i class="fa fa-id-badge"></i>
+                        </span>
+                        <span class="title"><form action="/autenticar" method="get">
+                          <button type="submit" class="but">
+                            Autenticar
+                          </button>
+                        </form>
+                          </span>
+                        </span>
+                        <svg
+                        viewBox="0 0 173.20508075688772 200"
+                        height="200"
+                        width="174"
+                        version="1.1"
+                        xmlns="http://www.w3.org/2000/svg"
+                        >
+                        <path
+                            d="M86.60254037844386 0L173.20508075688772 50L173.20508075688772 150L86.60254037844386 200L0 150L0 50Z"
+                            fill="#1e2530"
+                        ></path>
+                        </svg>
+                    </a>
+                    </div>
+                    </div>
+          </div>
+          </div>
+          <br>
+          <br>
+          <br>
+          <br>
+        </main>
+          <div id="convocatorias" class="convocatorias">
+            <h2 class="convoc">Convocatorias</h2>
+            <ul>
+              <br>
+                <li class="convocat" th:each="convocatoria : ${convocatorias}">
+                    Te invitamos a participar en: <span th:text="${convocatoria.nombre}"></span><br>
+                    Del: <span th:text="${convocatoria.fechaInicio}"></span>
+                    al: <span th:text="${convocatoria.fechaFin}"></span><br>
+                    Descripción: <span th:text="${convocatoria.descripcion}"></span>
+                    <br>
+                    <br>
+                </li>
+            </ul>
+            <h4 class="participar">Para participar en estos eventos solo debes registrarte a nuestra plataforma</h4>
+            <br>
+            <br>
+
+        </div>
+        <script th:inline="javascript">
+          function scrollToConvocatorias() {
+              document.getElementById('convocatorias').scrollIntoView({ behavior: 'smooth' });
+          }
+      </script>
+  
+                  
+            
+  </body>
+</html>

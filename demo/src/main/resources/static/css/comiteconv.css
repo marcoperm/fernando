@@ -1,0 +1,98 @@
+
+.table{
+    margin-left: 10px;
+    border-collapse: separate;
+    border-spacing: 0;
+    width: 50%;
+}
+.h2{
+    color: #122c79;
+        margin-left: 40px;
+        position: relative;
+        display: inline-block;
+    }
+    .h2::before{
+        content: '';
+    position: absolute;
+    left: 0;
+    bottom: -3px;
+    width: 100%;
+    height: 3px;
+    background-image: linear-gradient(to right,#add8e6,#4169e1);
+    background-size: 200% 100%;
+    background-position: 0;
+    animation: gradientAnimation 5s linear infinite;
+    }
+.th{
+    background-color: blue;
+    color: white;
+    font-weight: bold;
+    text-align: center;
+    align-items: center;
+}
+td, th{
+    border: 1px solid black;
+    padding: 5px;
+    
+}
+.eee{
+    align-items: center;
+    text-align: center;
+}
+.table a{
+    padding: 0;
+    margin-left: 5px;
+    list-style: none;
+    font-size: 25px;
+    position: relative;
+    z-index: 1;
+    transition: all 0.3s ease 0s;
+}
+.table .edit{
+    color: green;
+}
+.table .elim{
+    color: red;
+}
+.btn{
+    color: rgba(15, 15, 15, 0.938);
+    background: transparent;
+    font-size: 16px;
+    text-transform: capitalize;
+    border: 2px solid #0c08dd;
+    border-radius: 50px;
+    transition: all 0.3s ease 0s;
+}
+.btn:hover{
+    color: black;
+    text-shadow: 3px 3px rgba(255,255,255,0.2);
+}
+.form-control{
+    color: black;
+    background-color: transparent;
+    width: 25%;
+    height: 30px;
+    border: 2px solid #0c08dd;
+    border-radius: 20px;
+    display: inline-block;
+    transition: all 0.3s ease 0s;
+}
+.form-control:focus{
+    background-color: rgb(253, 253, 253);
+    box-shadow: none;
+    outline: none;
+}
+.form-control::placeholder{
+    color:  rgba(39, 36, 36, 0.582);
+    font-size: 15px;
+    font-weight: 500;
+}
+.glyphicon{
+    font-size: 20px;
+    color: blue;
+    border: none;
+    background: none;
+}
+.nav-link:hover{
+    font-size: 18px;
+    }

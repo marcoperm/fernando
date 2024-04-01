@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="es" xmlns: th="https://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestionar Eventos</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" th:href="@{/css/comiteevento.css}"/>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link" th:href="@{/comite}">Volver</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" th:href="@{/crearEvento}">Crear Evento</a>
+                </li>
+            </ul>
+            </div>
+        
+    </nav>
+    <h2 class="h2">Lista de Eventos</h2>
+    <br>
+    <table class="table">
+        <thead>
+            <tr>
+                <th class="th">Id</th>
+                <th class="th">Nombre</th>
+                <th class="th">Fecha inicia</th>
+                <th class="th">Fecha termina</th>
+                <th class="th">Modificar</th>
+                <th class="th">Eliminar</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr th:each=" evento: ${eventos}">
+                <td th:text="${evento.id_event}"></td>
+                <td th:text="${evento.nombreEvent}"></td>
+                <td th:text="${evento.fechaInicio}"></td>
+                <td th:text="${evento.fechaFin}"></td>
+                <td>
+                    <a class="edit" data-tip="edit" th:href="@{/editarevento/{id}(id=${evento.id_event})}"><i class="fa fa-edit"></i></a>
+                </td>
+                <td>
+                    <a class="elim" data-tip="delete"th:href="@{/eliminar/{id}(id=${evento.id_event})}"><i class="fa fa-trash"></i></a>
+                </td>
+        
+            </tr>
+        </tbody>
+    </table>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@1.16.1/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html xmlns: th="https://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" th:href="@{/css/formularios.css}"/>
+</head>
+<body>
+    <br>
+    <div class="confirma" th:if="${not#strings.isEmpty(mensaje)}"  style="font-size: 20px; color: black;">
+        <span th:text="${mensaje}" ></span>
+    <a class="reg" th:href="@{/comiteevent}">Volver</a>
+    </div>
+    <br>
+    <div class="container">
+        <img src="../images/logo.png" width="120" height="120" >
+    <form method="POST" th:action="@{/crearEvento}" th:object="${EventoForm}" enctype="multipart/form-data">
+
+        <input placeholder="Nombre del evento" type="text" name="nombreEvent" required/><br/>
+        <br>
+        <input placeholder="descripción del evento" type="text" name="descrip" required/><br/>
+        <br>
+        <input placeholder="Fecha que inicia" type="date" name="fechaInicio" required/><br/>
+        <br>
+        <input placeholder="Fecha que termina" type="date" name="fechaFin" required/><br/>
+        <br>
+        <input placeholder="Imágenes" name="imagen"type="file" accept="image/*" multiple/><br/>
+        <br>
+
+        <button class="but" type="submit">Guardar</button>
+        <button class="but" > <a class="r" th:href="@{/comiteevent}">Cancelar</a></button>
+    </form>
+    
+</div>
+<!--<table>
+        <th:block th:each="e:${evento}">
+            <tr>
+                <td th:text="${e.nombreEvent}"></td>
+                <td th:text="${e.descrip}"></td>
+                <td th:text="${e.fechaInicio}"></td>
+                <td th:text="${e.fechaFin}"></td>
+                <td th:text="${e.imagen}"></td>
+            </tr>
+        </th:block>
+    </table>-->
+</body>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Detalle del Evento</title>
+    <link rel="stylesheet" th:href="@{/css/verEvento.css}"/>
+    
+</head>
+<br>
+    <a th:href="@{/particEventosTodos}">&#8810;Volver</a>
+    <a href="">&#9752;Suscribir a Evento</a>
+    <a th:href="@{/subirTrabajo}">&#9729;Subir Trabajo</a>
+    <br>
+    <br>
+    <br>
+    <div class="container">
+        <div class="container-ee">
+            <h1 th:text="${evento.nombreEvent}"></h1>
+            <p th:text="${evento.fechaInicio}"></p>
+            <p th:text="${evento.fechaFin}"></p>
+            <p th:text="${evento.descrip}"></p>
+        </div>
+    <div class="container-di"th:each="imagen : ${evento.rutasImagenes}">
+        <img th:src="@{${imagen}}" class="d-block w-100" alt="Imagen" />
+    </div>
+    
+    <!--<div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+        <div class="carousel-inner">
+            <div th:class="'carousel-item' + (iterStat.index==0 ? ' active' : '')" th:each="imagen : ${evento.rutasImagenes}">
+                <img th:src="@{${imagen}}" class="d-block w-100" alt="Imagen" />
+            </div>
+        </div>-->
+        <!--<a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="sr-only">Anterior</span>
+        </a>
+        <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="sr-only">Siguiente</span>
+        </a>-->
+    </div>
+
+    
+</body>
+</html>

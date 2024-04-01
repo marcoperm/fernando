@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html xmlns: th="https://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Modificar</title>
+    <link rel="stylesheet" th:href="@{/css/registrarestilo.css}"/>
+    <link
+    href="https://cdnjs.cloudflare.com/ajax/libs/simple-line-icons/2.4.1/css/simple-line-icons.min.css"
+    rel="stylesheet"
+    />
+    <link
+    rel="stylesheet"
+    href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+    />
+    <link rel="stylesheet" href="assets/css/style.css" />
+</head>
+<body>
+    <div class="registration-form">
+    <form method="POST" th:action="@{/editarUser}" th:object="${user}" enctype="multipart/form-data">
+        <input type="hidden" th:field="*{id}" />
+        <div class="form-icon">
+        <span><i class="icon icon-user"></i></span>
+        </div>
+        <div class="form-group">
+            <label for="nombre">Nombre</label>
+        <input
+            type="text"
+            class="form-control item"
+            th:field="*{nombre}"
+            required
+        />
+        </div>
+        <div class="form-group">
+            <label for="apellidos">apellidos</label>
+            <input
+            type="text"
+            class="form-control item"
+            th:field="*{apellidos}"
+            required
+
+            />
+        </div>
+        
+        <div class="form-group">
+            <label for="clave">clave</label>
+        <input
+            type="password"
+            class="form-control item"
+            th:field="*{clave}"
+            required
+        />
+        </div>
+        <div class="form-group">
+            <label for="correo">correo</label>
+        <input
+            type="email"
+            class="form-control item"
+            th:field="*{correo}"
+            required
+        />
+        </div>
+        <div class="form-group">
+            <label for="facultad">facultad</label>
+        <input
+            type="text"
+            class="form-control item"
+            th:field="*{facultad}"
+            required
+        />
+        </div>
+        <div class="form-group">
+            <label for="categdocente">categdocente</label>
+        <input
+            type="text"
+            class="form-control item"
+            th:field="*{categdocente}"
+            required
+        
+        />
+        </div>
+        <div class="form-group">
+            <label for="edad">edad</label>
+            <input
+            type="number"
+            class="form-control item"
+            th:field="*{edad}"
+            min="15" max="100"
+            required
+            
+
+            />
+        </div>
+        <div class="form-group">
+        <button type="submit" class="btn btn-block create-account">
+            Modificar
+        </button>
+        </div>
+        <div class="form-group">
+        <button type="button" class="btn btn-block create-account">
+            <a class="a" th:href="@{/}">Cancelar</a>
+        </button>
+        </div>
+    </form>
+    
+</body>
+</html>

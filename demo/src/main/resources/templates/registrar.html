@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html xmlns: th="https://www.thymeleaf.org">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Registrar</title>
+    <link rel="stylesheet" th:href="@{/css/registrarestilo.css}"/>
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/simple-line-icons/2.4.1/css/simple-line-icons.min.css"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+    />
+    <link rel="stylesheet" href="assets/css/style.css" />
+  </head>
+  <body>
+    <div class="confirma" th:if="${not#strings.isEmpty(mensaje)}" style="font-size: 20px; color: black;">
+      <span th:text="${mensaje}" ></span>
+      <a class="registrado" th:href="@{/autenticar}">Autenticarse</a>
+      <a class="registrado" th:href="@{/}">Página Principal</a>
+    </div>
+    
+    <div class="registration-form">
+      <form method="POST" th:action="@{/registrarse}">
+        <div class="form-icon">
+          <span><i class="icon icon-user"></i></span>
+        </div>
+        <div class="form-group">
+          <input
+            type="text"
+            class="form-control item"
+            id="usuarnom"
+            placeholder="Nombre"
+            autocomplete="off"
+            required
+            name="nombre"
+          />
+        </div>
+        <div class="form-group">
+            <input
+              type="text"
+              class="form-control item"
+              id="userlastname"
+              placeholder="Apellidos"
+              autocomplete="off"
+              required
+              name="apellidos"
+
+            />
+          </div>
+          <div class="form-group">
+            <input
+              type="text"
+              class="form-control item"
+              id="username"
+              placeholder="Usuario"
+              autocomplete="off"
+              required
+              name="usuario"
+            />
+          </div>
+        <div class="form-group">
+          <input
+            type="password"
+            class="form-control item"
+            id="password"
+            placeholder="contraseña"
+            autocomplete="off"
+            required
+            name="clave"
+          />
+        </div>
+        <div class="form-group">
+          <input
+            type="email"
+            class="form-control item"
+            id="email"
+            placeholder="correo"
+            autocomplete="off"
+            required
+            name="correo"
+          />
+        </div>
+        <div class="form-group">
+          <input
+            type="text"
+            class="form-control item"
+            id="facul"
+            placeholder="facultad"
+            autocomplete="off"
+            required
+            name="facultad"
+          />
+        </div>
+        <div class="form-group">
+          <input
+            type="text"
+            class="form-control item"
+            id="categ"
+            placeholder="categoría docente"
+            autocomplete="off"
+            required
+            name="categdocente"
+          />
+        </div>
+        <div class="form-group">
+            <input
+              type="number"
+              class="form-control item"
+              id="edad"
+              placeholder="edad"
+              autocomplete="off"
+              min="15" max="100"
+              required
+              name="edad"
+
+            />
+          </div>
+        <div class="form-group">
+          <button type="submit" class="btn btn-block create-account">
+            Registrarse
+          </button>
+        </div>
+        <div class="form-group">
+          <button type="button" class="btn btn-block create-account">
+            <a class="a" th:href="@{/}">Cancelar</a>
+          </button>
+        </div>
+      </form>
+      
+  </body>
+</html>
